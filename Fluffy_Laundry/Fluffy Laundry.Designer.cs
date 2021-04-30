@@ -33,14 +33,14 @@ namespace Fluffy_Laundry
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.lbltglPemesanan = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbnohp = new System.Windows.Forms.TextBox();
             this.lblnohp = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.daftarharga = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbjenispaket = new System.Windows.Forms.ComboBox();
+            this.tbhargatotal = new System.Windows.Forms.TextBox();
+            this.tbharga = new System.Windows.Forms.TextBox();
+            this.tbberat = new System.Windows.Forms.TextBox();
+            this.tbnama = new System.Windows.Forms.TextBox();
             this.lbltgl = new System.Windows.Forms.Label();
             this.lblhrgT = new System.Windows.Forms.Label();
             this.lblharga = new System.Windows.Forms.Label();
@@ -54,12 +54,12 @@ namespace Fluffy_Laundry
             // 
             // Judul
             // 
-            this.Judul.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.Judul.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Judul.ForeColor = System.Drawing.Color.Navy;
+            this.Judul.BackColor = System.Drawing.Color.Plum;
+            this.Judul.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Judul.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.Judul.Location = new System.Drawing.Point(273, 23);
             this.Judul.Name = "Judul";
-            this.Judul.Size = new System.Drawing.Size(363, 31);
+            this.Judul.Size = new System.Drawing.Size(363, 28);
             this.Judul.TabIndex = 0;
             this.Judul.Text = "FLUFFY LAUNDRY";
             this.Judul.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -67,17 +67,17 @@ namespace Fluffy_Laundry
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.Color.Thistle;
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.lbltglPemesanan);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.tbnohp);
             this.groupBox1.Controls.Add(this.lblnohp);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.daftarharga);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbjenispaket);
+            this.groupBox1.Controls.Add(this.tbhargatotal);
+            this.groupBox1.Controls.Add(this.tbharga);
+            this.groupBox1.Controls.Add(this.tbberat);
+            this.groupBox1.Controls.Add(this.tbnama);
             this.groupBox1.Controls.Add(this.lbltgl);
             this.groupBox1.Controls.Add(this.lblhrgT);
             this.groupBox1.Controls.Add(this.lblharga);
@@ -99,6 +99,7 @@ namespace Fluffy_Laundry
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(220, 31);
             this.dateTimePicker2.TabIndex = 17;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // lbltglPemesanan
             // 
@@ -110,12 +111,13 @@ namespace Fluffy_Laundry
             this.lbltglPemesanan.Text = "Tanggal Pemesanan";
             this.lbltglPemesanan.Click += new System.EventHandler(this.lbltglPemesanan_Click);
             // 
-            // textBox3
+            // tbnohp
             // 
-            this.textBox3.Location = new System.Drawing.Point(264, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 31);
-            this.textBox3.TabIndex = 15;
+            this.tbnohp.Location = new System.Drawing.Point(264, 91);
+            this.tbnohp.Name = "tbnohp";
+            this.tbnohp.Size = new System.Drawing.Size(220, 31);
+            this.tbnohp.TabIndex = 15;
+            this.tbnohp.TextChanged += new System.EventHandler(this.tbnohp_TextChanged);
             // 
             // lblnohp
             // 
@@ -133,48 +135,54 @@ namespace Fluffy_Laundry
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(220, 31);
             this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // daftarharga
+            // tbjenispaket
             // 
-            this.daftarharga.FormattingEnabled = true;
-            this.daftarharga.Items.AddRange(new object[] {
+            this.tbjenispaket.FormattingEnabled = true;
+            this.tbjenispaket.Items.AddRange(new object[] {
             "Paket A",
             "Paket B",
             "Paket C"});
-            this.daftarharga.Location = new System.Drawing.Point(264, 191);
-            this.daftarharga.Name = "daftarharga";
-            this.daftarharga.Size = new System.Drawing.Size(220, 33);
-            this.daftarharga.TabIndex = 12;
-            this.daftarharga.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.tbjenispaket.Location = new System.Drawing.Point(264, 191);
+            this.tbjenispaket.Name = "tbjenispaket";
+            this.tbjenispaket.Size = new System.Drawing.Size(220, 33);
+            this.tbjenispaket.TabIndex = 12;
+            this.tbjenispaket.SelectedIndexChanged += new System.EventHandler(this.tbjenispaket_SelectedIndexChanged);
             // 
-            // textBox5
+            // tbhargatotal
             // 
-            this.textBox5.Location = new System.Drawing.Point(264, 301);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(220, 31);
-            this.textBox5.TabIndex = 10;
+            this.tbhargatotal.Enabled = false;
+            this.tbhargatotal.Location = new System.Drawing.Point(264, 301);
+            this.tbhargatotal.Name = "tbhargatotal";
+            this.tbhargatotal.Size = new System.Drawing.Size(220, 31);
+            this.tbhargatotal.TabIndex = 10;
+            this.tbhargatotal.TextChanged += new System.EventHandler(this.tbhargatotal_TextChanged);
             // 
-            // textBox4
+            // tbharga
             // 
-            this.textBox4.Location = new System.Drawing.Point(264, 248);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(220, 31);
-            this.textBox4.TabIndex = 9;
+            this.tbharga.Enabled = false;
+            this.tbharga.Location = new System.Drawing.Point(264, 248);
+            this.tbharga.Name = "tbharga";
+            this.tbharga.Size = new System.Drawing.Size(220, 31);
+            this.tbharga.TabIndex = 9;
+            this.tbharga.TextChanged += new System.EventHandler(this.tbharga_TextChanged);
             // 
-            // textBox2
+            // tbberat
             // 
-            this.textBox2.Location = new System.Drawing.Point(264, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 31);
-            this.textBox2.TabIndex = 7;
+            this.tbberat.Location = new System.Drawing.Point(264, 141);
+            this.tbberat.Name = "tbberat";
+            this.tbberat.Size = new System.Drawing.Size(150, 31);
+            this.tbberat.TabIndex = 7;
+            this.tbberat.TextChanged += new System.EventHandler(this.tbberat_TextChanged);
             // 
-            // textBox1
+            // tbnama
             // 
-            this.textBox1.Location = new System.Drawing.Point(264, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(381, 31);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.tbnama.Location = new System.Drawing.Point(264, 39);
+            this.tbnama.Name = "tbnama";
+            this.tbnama.Size = new System.Drawing.Size(381, 31);
+            this.tbnama.TabIndex = 6;
+            this.tbnama.TextChanged += new System.EventHandler(this.tbnama_TextChanged_1);
             // 
             // lbltgl
             // 
@@ -239,7 +247,7 @@ namespace Fluffy_Laundry
             // btnsimpan
             // 
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnsimpan.Location = new System.Drawing.Point(791, 532);
+            this.btnsimpan.Location = new System.Drawing.Point(759, 532);
             this.btnsimpan.Name = "btnsimpan";
             this.btnsimpan.Size = new System.Drawing.Size(112, 34);
             this.btnsimpan.TabIndex = 2;
@@ -250,7 +258,7 @@ namespace Fluffy_Laundry
             // btnreset
             // 
             this.btnreset.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnreset.Location = new System.Drawing.Point(635, 532);
+            this.btnreset.Location = new System.Drawing.Point(558, 532);
             this.btnreset.Name = "btnreset";
             this.btnreset.Size = new System.Drawing.Size(112, 34);
             this.btnreset.TabIndex = 3;
@@ -262,7 +270,7 @@ namespace Fluffy_Laundry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(915, 578);
             this.Controls.Add(this.btnreset);
             this.Controls.Add(this.btnsimpan);
@@ -284,11 +292,11 @@ namespace Fluffy_Laundry
         private System.Windows.Forms.TextBox Judul;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblnama;
-        private System.Windows.Forms.ComboBox daftarharga;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox tbjenispaket;
+        private System.Windows.Forms.TextBox tbhargatotal;
+        private System.Windows.Forms.TextBox tbharga;
+        private System.Windows.Forms.TextBox tbberat;
+        private System.Windows.Forms.TextBox tbnama;
         private System.Windows.Forms.Label lbltgl;
         private System.Windows.Forms.Label lblhrgT;
         private System.Windows.Forms.Label lblharga;
@@ -297,7 +305,7 @@ namespace Fluffy_Laundry
         private System.Windows.Forms.Button btnsimpan;
         private System.Windows.Forms.Button btnreset;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbnohp;
         private System.Windows.Forms.Label lblnohp;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label lbltglPemesanan;

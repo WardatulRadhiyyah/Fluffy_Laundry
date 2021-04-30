@@ -25,7 +25,7 @@ namespace Fluffy_Laundry
         public string NomorHP
         {
             get { return _NomorHP; }
-            set { _NomorHP= value; }
+            set { _NomorHP = value; }
         }
         public double Berat
         {
@@ -37,22 +37,22 @@ namespace Fluffy_Laundry
             get { return _Tanggalpemesanan; }
             set { _Tanggalpemesanan = value; }
         }
-        
-         public DateTime Tanggalpengambilan
-         {
-             get { return _Tanggalpengambilan; }
-             set { _Tanggalpengambilan = value; }
-         }
-         public string Jenispaket
-         {
-           get { return _Jenispaket; }
-           set { _Jenispaket = value; }
-          }
-         public double Totalbiaya
-         {
+
+        public DateTime Tanggalpengambilan
+        {
+            get { return _Tanggalpengambilan; }
+            set { _Tanggalpengambilan = value; }
+        }
+        public string Jenispaket
+        {
+            get { return _Jenispaket; }
+            set { _Jenispaket = value; }
+        }
+        public double Totalbiaya
+        {
             get { return _Totalbiaya; }
             set { _Totalbiaya = value; }
-         }
+        }
         public Data_pemesanan() { }
         public Data_pemesanan(string namapemesan, string nomorhp, int berat, DateTime tglPesan, string jenis)
         {
@@ -62,19 +62,12 @@ namespace Fluffy_Laundry
             Jenispaket = jenis;
             Tanggalpemesanan = tglPesan;
         }
-        public void hitungTotal()
-        {
-            Paket_cucian paket = new Paket_cucian(Jenispaket);
-            Totalbiaya = Berat * paket.Hargapaket;
-        }
-        public void hitungTanggal()
-        {
-            Paket_cucian paket = new Paket_cucian(Jenispaket);
-            Tanggalpengambilan = Tanggalpemesanan.AddDays(paket.Durasi);
-        }
-
     }
-
-
 }
+
+        
+        
+
+
+
 
